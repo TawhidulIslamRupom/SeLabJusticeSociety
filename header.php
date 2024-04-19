@@ -2,6 +2,10 @@
 include_once 'dbconnection.php';
 session_start();
 
+if (isset($_SESSION['user']) && strcmp($_SESSION['user'], "admin") == 0) {
+    header("Location:admin");
+}
+
 if (isset($_SESSION['user']) && strcmp($_SESSION['user'], "lawyer") == 0) {
     header("Location:lawyer");
 }
@@ -190,7 +194,7 @@ if (isset($_SESSION['user']) && strcmp($_SESSION['user'], "client") == 0) {
                 <div class="col-lg-6">
                     <div class="top-contact">
                         <ul>
-                            <li><a href="tel:+62 800 9000 123"> <i class="fa fa-phone"></i> +880 1632 11 4251</a> </li>
+                            <li><a href="tel:+62 800 9000 123"> <i class="fa fa-phone"></i> +880 1632 00 0000</a> </li>
                             <li><a href="mailto:mail@yoursite.com"> <i class="fa fa-envelope"></i> admin@justicesociety.com</a> </li>
                         </ul>
                     </div>
@@ -202,7 +206,7 @@ if (isset($_SESSION['user']) && strcmp($_SESSION['user'], "client") == 0) {
 
                         </ul>
 
-                        <a href="lawyers.php?#lawyers" class="btn btn-primary">book an lawyer</a>
+                        <a href="lawyerss.php?#lawyers" class="btn btn-primary">book an lawyer</a>
                     </div>
                 </div>
 
@@ -260,7 +264,7 @@ if (isset($_SESSION['user']) && strcmp($_SESSION['user'], "client") == 0) {
 
                             <li class="nav-item dropdown">
                                 <div id="sb-search" class="sb-search ">
-                                    <form role="search" action="lawyers.php?#lawyers" method="get">
+                                    <form role="search" action="lawyerss.php?#lawyers" method="get">
                                         <input class="sb-search-input qutu noborder" onkeyup="buttonUp();" onblur="monkey();" type="search"  name="search" id="search">
                                         <input class="sb-search-submit" type="submit" value="">
                                         <span class="sb-icon-search text-danger"><i class="fa fa-search"></i></span>
@@ -313,6 +317,34 @@ if (isset($_SESSION['user']) && strcmp($_SESSION['user'], "client") == 0) {
 
 
     <!--All modeal start-->
+    <div class="modal fade" id="adminloginmodel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Admin login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="adminlogincore.php" method="post">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
 
     <div class="modal fade" id="lawyerloginmodel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
