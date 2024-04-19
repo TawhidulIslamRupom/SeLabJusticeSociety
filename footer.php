@@ -11,7 +11,7 @@
 				</div>
 				<div class="col-lg-3">
 					<div class="cta-btn">
-						<a href="lawyers.php?#lawyers" class="btn btn-primary">book an Lawyer</a>
+						<a href="lawyers.php?#lawyers" class="btn btn-primary">Search for a Lawyer</a>
 					</div>
 				</div>
 
@@ -27,9 +27,9 @@
 			<div class="row">
 				<div class="col-lg-3">
 					<div class="footer-col footer-about">
-						<p class="phone-text">+880 1632 11 4251</p>
+						<p class="phone-text">+880 1632 00 0000</p>
 						<p>admin@justicesociety.com</p>
-						<p>Dhaka,Bangladesh</p>
+						<p>Dhaka, Bangladesh</p>
 						<ul class="top-social">
 							<li><a href=""><i class="fa fa-facebook"></i></a> </li>
 							<li><a href=""><i class="fa fa-instagram"></i></a> </li>
@@ -58,11 +58,11 @@
 					<div class="footer-col footer-menu">
 						<h3>Useful Links</h3>
 						<ul>
-							<li> <a href="">About Us</a> </li>
-							<li> <a href="">Corporate Profile</a> </li>
-							<li> <a href="">Our Team</a> </li>
-							<li> <a href="">Portfolio</a> </li>
-							<li> <a href="">Our Office</a> </li>
+							<li> <a href="">About Service</a> </li>
+							<li> <a href="">Corporate Details</a> </li>
+							<li> <a href="">Team Members</a> </li>
+							<li> <a href="">Team Portfolio</a> </li>
+							<li> <a href="">Office Hours</a> </li>
 						</ul>
 					</div>
 				</div>
@@ -71,11 +71,11 @@
 					<div class="footer-col footer-menu">
 						<h3>Useful Links</h3>
 						<ul>
-							<li> <a href="">About Us</a> </li>
-							<li> <a href="">Corporate Profile</a> </li>
-							<li> <a href="">Our Team</a> </li>
-							<li> <a href="">Portfolio</a> </li>
-							<li> <a href="">Our Office</a> </li>
+							<li> <a href="">Social Media</a> </li>
+							<li> <a href="">Help Line</a> </li>
+							<li> <a href="">Our Services</a> </li>
+							<li> <a href="">Portfolio Overview</a> </li>
+							<li> <a href="">Office Location</a> </li>
 						</ul>
 					</div>
 				</div>
