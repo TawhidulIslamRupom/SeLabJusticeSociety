@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Practicing Area</title>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Style for the button */
+        .go-home-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 20px;
+        }
+
+        /* Hover effect for the button */
+        .go-home-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Style for the card container */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* Style for each card */
+        .card {
+            width: calc(33.33% - 20px);
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        /* Hover effect for each card */
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Style for card image */
+        .card-img-top {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Style for card body */
+        .card-body {
+            padding: 20px;
+        }
+
+        /* Style for card title */
+        .card-title {
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Style for card text */
+        .card-text {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="legalAreas"></div>
+
+    <script>
+        // Function to fetch and display legal practice areas
+        function fetchLegalAreas() {
+            // Call the API endpoint
+            $.ajax({
+                url: 'legal_practice_area_api.php',
+                method: 'GET',
+                success: function(response) {
+                    // Display the legal practice areas
+                    if (response.length > 0) {
+                        // Construct the HTML response
+                        var html = '<div class="card-container">';
+                        $.each(response, function(index, area) {
+                            // Construct the HTML for each legal practice area card
+                            html += '<div class="card">';
+                            html += '<img src="images/' + area.image + '" class="card-img-top" alt="' + area.category + '">';
+                            html += '<div class="card-body">';
+                            html += '<h5 class="card-title">' + area.category + '</h5>';
+                            html += '<p class="card-text">' + area.description + '</p>';
+                            html += '</div>';
+                            html += '</div>';
+                        });
+                        html += '</div>';
+                        $('#legalAreas').html(html);
+                    } else {
+                        $('#legalAreas').html('No legal practicing areas found.');
+                    }
+                },
+                error: function() {
+                    $('#legalAreas').html('Error fetching legal practicing areas.');
+                }
+            });
+        }
+
+        // Call fetchLegalAreas function when the document is ready
+        $(document).ready(function() {
+            fetchLegalAreas(); // Load legal practice areas immediately when the page loads
+        });
+    </script>
+    <!-- Style the button -->
+    <button class="go-home-btn"><a href="index.php" style="color: white; text-decoration: none;">Go to Home</a></button>
+</body>
+</html>
