@@ -337,7 +337,7 @@ if ($result->num_rows > 0) {
             </div>
         </div>
     </section>
-    <!--End Banner Sections	-->
+    <!--End Banner Section	-->
 
 
 

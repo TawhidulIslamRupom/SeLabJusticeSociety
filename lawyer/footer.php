@@ -26,7 +26,7 @@
 		<div class="row">
 			<div class="col-lg-3">
 				<div class="footer-col footer-about">
-					<p class="phone-text">+880 1632 11 4251</p>
+					<p class="phone-text">+880 1632 00 0000</p>
 					<p>admin@justicesociety.com</p>
 					<p>Dhaka,Bangladesh</p>
 					<ul class="top-social">
