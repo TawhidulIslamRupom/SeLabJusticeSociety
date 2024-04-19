@@ -69,6 +69,10 @@
 					<div class="signature">
 						<img src="images/signature.png" alt="">
 						<p>CEO & Founder Of Justice Society</p>
+						<!-- Example button to fetch data from API -->
+                        <button id="fetchDataBtn" class="btn btn-primary">Show Available Lawyers </button>
+                        <div id="apiResponse"></div>
+
 					</div>
 
 				</div>
@@ -85,6 +89,8 @@
 	</div>
 </section>
 <!--End About Section	-->
+
+
 
 <!--Start Services	-->
 <section class="services-section" id="services-section-id">
@@ -302,4 +308,27 @@
 	</div>
 </section>
 <!--End Logo Section-->
+
+
 <?php include 'footer.php' ?>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#fetchDataBtn').click(function() {
+        // Make an API call when the button is clicked
+        $.ajax({
+            url: 'lawyerlist.php',
+            method: 'GET',
+            success: function(response) {
+                // Display the API response in a div with id 'apiResponse'
+                $('#apiResponse').html('<pre>' + JSON.stringify(response, null, 2) + '</pre>');
+            },
+            error: function(xhr, status, error) {
+                // Handle errors
+                $('#apiResponse').html('Error fetching data from API: ' + error);
+            }
+        });
+    });
+});
+</script>
