@@ -7,7 +7,6 @@
         <img src="images/Admin.png" alt="fdsa" width="1100px" height="500px">
     </div>
 
-
 </div>
 <!-- /.container-fluid -->
 
